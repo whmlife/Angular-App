@@ -1,0 +1,27 @@
+<ion-view title="Schedule">
+  <ion-content overflow-scroll="true">
+    <div class="scheduleheader" ng-if="showSchedule">
+      <div class="row" style="text-align: center;color: #257b86;font-size: 1.5em;">
+        <div class="col-20"><i class="ion-arrow-left-b col"></i></div>
+        <div class="col-60" style="margin-top: 5px;">{{headerDate}}</div>
+        <div class="col-20"><i class="ion-arrow-right-b col"></i></div>
+      </div>
+    </div>
+    <div class="schedulecontent row" style=" margin-top: 10px;" on-tap="createNewEvent(event);">
+      <div class="col-10"></div>
+      <div class="col-90" style="position: relative;">
+        <current-line></current-line>
+        <div>
+          <div ng-repeat="ev in evs"
+               class="eventblock"
+               style="left: {{ev.left}};top:{{ev.top}};width:{{ev.width}};height: {{ev.height}}">
+          </div>
+          <new-event></new-event>
+        </div>
+        <div ng-class="{'border1':($index%2)==0,'border2':($index%2)!=0}"  class="timeblock" ng-repeat="time in timeData">
+          <span class="timelabel">{{time.timeLabel}}</span>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

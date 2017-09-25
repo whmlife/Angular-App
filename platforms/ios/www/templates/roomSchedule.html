@@ -1,0 +1,40 @@
+<ion-view title="{{roomTitle}}">
+  <ion-nav-buttons side="right">
+    <button class="button button-clear" on-tap="refreshMeetingInfo();">
+      <!-- 刷新会议的信息 -->
+      <i class="ion-refresh"></i>
+    </button>
+  </ion-nav-buttons>
+  <div class="scheduleheader bar has-header">
+    <div class="row" style="text-align: center;color: #257b86;font-size: 1.5em;">
+      <div class="col-20" ng-click="changeDate(-1)"><i class="ion-arrow-left-b col"></i></div>
+      <div class="col-60" style="margin-top: 5px;" ng-click="showDatePicker()">{{headerDate}}</div>
+      <div class="col-20" ng-click="changeDate(1)"><i class="ion-arrow-right-b col"></i></div>
+    </div>
+  </div>
+  <ion-content overflow-scroll="true" class = 'schedulescroll'>
+
+    <ion-refresher
+      on-refresh="refreshMeetingInfo();">
+    </ion-refresher>
+
+    <div class="schedulecontent row" style=" margin-top: 54px;" >
+      <div class="col-10"></div>
+      <div class="col-90" style="position: relative;">
+        <!--当前的线-->
+        <current-line ng-show="showLine"></current-line>
+        <div event-block ng-repeat="ev in evs"
+             class="eventblock"
+             ng-class="{'blue':(ev.$create && !ev.$isEdit),'green':(ev.$create && ev.$isEdit && ev.$isAvailable),'red':(ev.$create && ev.$isEdit && !ev.$isAvailable)}"
+             style="left: {{ev.left}};top:{{ev.top}};width:{{ev.width}};height: {{ev.height}};display: {{ev.display}}"
+        >
+          <div>{{ev.title}} &nbsp;&nbsp;{{ev.starts |date:'HH:mm'}} to {{ev.ends|date:'HH:mm'}}</div>
+        </div>
+        <!--创建一个新的会议-->
+        <div ng-class="{'border1':($index%2)==0,'border2':($index%2)!=0}" ng-click="createNewEventBlock(event);" class="timeblock" ng-repeat="time in timeData">
+          <span class="timelabel">{{time.timeLabel}}</span>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

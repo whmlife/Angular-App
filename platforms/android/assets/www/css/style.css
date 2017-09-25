@@ -1,0 +1,710 @@
+/* Empty. Add your own CSS if you like */
+
+/* all of popup */
+.popup-container .popup-head {
+  padding: 0;
+}
+
+/*.popup-container .popup {*/
+/*border-radius: 10px;*/
+/*}*/
+
+.popupconfirm {
+  width: 100%;
+  background: -webkit-linear-gradient(left, #2698A3, #3067A3);
+  color: #FFFFFF;
+}
+
+/* login */
+
+.loginheader {
+  font-size: 64px;
+  text-align: center;
+  color: #11C1F3;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.loginheader span {
+  font-size: 36px;
+}
+
+.logininfo {
+  font-size: 40px;
+  color: gainsboro;
+}
+
+.logininfo i {
+  margin-right: 5%;
+}
+
+.loginbtn {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.loginbtn button {
+  width: 100%;
+  background: -webkit-linear-gradient(left, #2698A3, #3067A3);
+  color: #FFFFFF;
+}
+
+.forgotbtn button {
+  margin-top: 10px;
+  font-size: 12px;
+  float: right;
+}
+
+/* filter ment */
+.row .col.col-30 {
+  text-align: center;
+}
+
+.favorcard {
+  background-color: #ffffff;
+}
+
+.favorcard .col-30 {
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 3px;
+}
+
+.menushow {
+  left: 0px;
+  transition: left 0.2s;
+  -moz-transition: left 0.2s; /* Firefox 4 */
+  -webkit-transition: left 0.2s; /* Safari and Chrome */
+  -o-transition: left 0.2s; /* Opera */
+}
+
+.menuhide {
+  left: 275px;
+  transition: left 0.2s;
+  -moz-transition: left 0.2s; /* Firefox 4 */
+  -webkit-transition: left 0.2s; /* Safari and Chrome */
+  -o-transition: left 0.2s; /* Opera */
+}
+
+.filtertime label {
+  padding: 10px;
+}
+
+/*floor RoomList*/
+
+.view-tabs {
+  font-size: 16px;
+  color: #d9d9d9;
+  border-bottom: 2px solid #d9d9d9;
+  text-align: center;
+}
+
+.view-tabs.active {
+  border-bottom: 2px solid #0a9dc7;
+  color: #0a9dc7;
+}
+
+.rightbar {
+  height: 200px;
+  width: 40px;
+  opacity: 0.8;
+  position: fixed;
+  top: 30%;
+  right: 0;
+}
+
+.floorlist {
+  border: 0px solid;
+  margin: 1%;
+}
+
+.floordetail {
+  width: 100%;
+}
+
+.floorheader {
+  width: 100%;
+  background-color: #d9d9d9;
+  min-height: 20px;
+}
+
+.roomlist {
+  display: flex;
+  flex-flow: wrap;
+  margin-right: 7%;
+}
+
+.room {
+  width: 24%;
+}
+
+.tips {
+  text-align: left;
+  background-color: rgba(10, 157, 199, .8);
+  font-size: 0.8em;
+  color: white;
+  position: absolute;
+  bottom: 110%;
+  left: 10px;
+  border-radius: 10px;
+}
+
+.tipslabel {
+  position: absolute;
+  left: -0.7em;
+  top: 1em;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-right: 10px solid rgba(10, 157, 199, .6);
+  border-bottom: 5px solid transparent;
+}
+
+.roomicon {
+  margin: auto auto;
+  height: 3em;
+  width: 3em;
+  padding-top: 5%;
+}
+
+.roomicon img {
+  width: 90%;
+  height: 90%;
+}
+
+.roomicon.infoicon {
+  margin: 0;
+  padding: 0;
+  margin: 12% auto;
+}
+
+.roomicon.infoicon img {
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.roomavailable {
+  background: url("../img/room_available.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.roomoccupied {
+  background: url("../img/room_occupied.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.roomreleased {
+  background: url("../img/room_released.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+/* accountinfo */
+.accountinfo {
+
+}
+
+.accountinfo label {
+  height: 50px;
+}
+
+.logoutbtn {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.logoutbtn button {
+  width: 100%;
+}
+
+/*schedule*/
+.scheduleheader {
+  /*top:44px;*/
+}
+
+.schedulecontent {
+  margin: 10px;
+}
+
+.border1 {
+  border-top: 1px solid #b1b1b1;
+}
+
+.border2 {
+  border-top: 1px dashed #b1b1b1;
+}
+
+.eventblock {
+  position: absolute;
+  min-height: 15px;
+  border-left: 2px solid rgb(176, 176, 176);
+  border-top: 2px solid rgb(176, 176, 176);
+  background-color: rgba(176, 176, 176, 0.6);
+}
+
+.eventblock.blue {
+  border-left: 2px solid rgb(54, 175, 216);
+  border-top: 2px solid rgb(54, 175, 216);
+  background-color: rgba(54, 175, 216, 0.6);
+}
+
+.eventblock.green {
+  color: white;
+  background-color: rgba(46, 203, 112, .6);
+  box-shadow: 3px 3px 2px #d9d9d9;
+  z-index: 9;
+}
+.eventblock.red {
+  color: white;
+  background-color: rgba(255, 0, 0, 0.6);
+  box-shadow: 3px 3px 2px #d9d9d9;
+  z-index: 9;
+}
+.eventblock.hidden{
+  display: none;
+}
+.neweventblock {
+  position: absolute;
+  min-height: 15px;
+  display: none;
+}
+
+.neweventblock1 {
+  display: block;
+  background-color: rgba(46, 203, 112, .8);
+}
+
+.neweventblock2 {
+  display: block;
+  background-color: rgba(255, 0, 0, 0.6);
+}
+
+.neweventblock .dragicon {
+  font-size: 26px;
+  text-align: center;
+  position: absolute;
+  left: -3%;
+  bottom: -8px;
+}
+
+/* reservation */
+.reservation .list .row {
+  border: 1px solid lightgrey;
+  border-radius: 1px;
+}
+
+.bookingcard {
+  margin: 2%;
+}
+
+.meetingtitle {
+  padding: 4px;
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.meetingtitle input {
+  font-size: 1.2em;
+}
+
+.bookingtime {
+  padding: 0px;
+  margin-bottom: 20px;
+}
+
+.bookingtime p {
+  font-size: 1.1em;
+  padding: 1px;
+  color: #AAAAAA;
+}
+
+.bookingroom {
+  font-size: 1.2em;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.bookingperson {
+  font-size: 1.2em;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.bookingnote {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.bookingnote textarea {
+  width: 100%;
+  height: 6em;
+  font-size: 1.2em;
+  resize: None;
+}
+
+/*timeLine*/
+.timetable {
+  margin: 10px;
+}
+
+.timefiled {
+  width: 80%;
+}
+
+.timeblock {
+  height: 30px;
+  color: #b1b1b1;
+}
+
+.isntfree {
+  background-color: lightcoral;
+  border: 1px solid lightcoral;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.ispass {
+  background-color: gainsboro;
+}
+
+.ischoose {
+  background-color: #92dc83;
+}
+
+.timeblock .timelabel {
+  position: relative;
+  left: -3em;
+  top: -0.7em;
+}
+
+.myline {
+  height: 100%;
+  width: 20%;
+}
+
+.currentline {
+  height: 1px;
+  width: 100%;
+  background-color: rgb(255, 123, 118);
+  position: absolute;
+  z-index: 999;
+}
+
+.currentline .round1 {
+  height: 6px;
+  width: 6px;
+  border-radius: 3px;
+  position: relative;
+  left: -1px;
+  top: -3px;
+  float: left;
+  background-color: rgb(255, 123, 118);
+  z-index: 999;
+}
+
+/* people modal */
+
+.autocomplete_card {
+}
+
+/*MAP*/
+.floatmenu {
+  background-color: rgba(255, 255, 255, .1);
+  position: fixed;
+  bottom: 15em;
+  right: 0px;
+  z-index: 200;
+}
+
+.floatmenu .component {
+  position: relative;
+  /*margin-bottom: 3em;*/
+  /*height: 15em;*/
+  background: rgba(0, 0, 0, 0.0);
+  font-family: 'Lato', Arial, sans-serif;
+}
+
+.cn-button {
+  position: absolute;
+  top: 100%;
+  right: -10%;
+  z-index: 11;
+  margin-top: -2.25em;
+  margin-left: -2.25em;
+  padding-top: 0em;
+  width: 5em;
+  height: 5em;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  background-color: #36AFD8;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+
+  -webkit-transform: scale(.5);
+  -moz-transform: scale(.5);
+  -ms-transform: scale(.5);
+  transform: scale(.5);
+}
+
+.cn-wrapper {
+  position: absolute;
+  top: 100%;
+  left: -3em;
+  z-index: 10;
+  margin-top: -13em;
+  margin-left: -13.5em;
+  width: 27em;
+  height: 27em;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 0;
+
+  -webkit-transition: all .3s ease 0.3s;
+  -moz-transition: all .3s ease 0.3s;
+  transition: all .3s ease 0.3s;
+
+  -webkit-transform: scale(0.1);
+  -ms-transform: scale(0.1);
+  -moz-transform: scale(0.1);
+  transform: scale(0.1);
+
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/*cover to prevent extra space of anchors from being clickable*/
+.cn-wrapper:after {
+  content: ".";
+  display: block;
+  font-size: 2em;
+  width: 6.2em;
+  height: 6.2em;
+  position: absolute;
+  left: 50%;
+  margin-left: -3.1em;
+  top: 50%;
+  margin-top: -3.1em;
+  border-radius: 50%;
+  z-index: 10;
+  color: transparent;
+}
+
+.opened-nav {
+  border-radius: 50%;
+  opacity: 1;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transform: scale(.5);
+  -moz-transform: scale(.5);
+  -ms-transform: scale(.5);
+  transform: scale(.5);
+  pointer-events: auto;
+}
+
+.cn-wrapper li {
+  position: absolute;
+  /*top: 50%;*/
+  left: 50%;
+  overflow: hidden;
+  margin-top: -1.3em;
+  margin-left: -10em;
+  width: 10em;
+  height: 10em;
+  font-size: 1.5em;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transform: rotate(76deg) skew(60deg);
+  -moz-transform: rotate(76deg) skew(60deg);
+  -ms-transform: rotate(76deg) skew(60deg);
+  transform: rotate(76deg) skew(60deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  pointer-events: none;
+}
+
+.cn-wrapper li div {
+  position: absolute;
+  right: -7.25em;
+  bottom: -7.25em;
+  display: block;
+  width: 14.5em;
+  height: 14.5em;
+  border-radius: 50%;
+  background: #36AFD8;
+  background: -webkit-radial-gradient(transparent 35%, #36AFD8 35%);
+  background: -moz-radial-gradient(transparent 35%, #36AFD8 35%);
+  background: radial-gradient(transparent 35%, #36AFD8 35%);
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2em;
+  line-height: 2;
+  -webkit-transform: skew(-60deg) rotate(-75deg) scale(1);
+  -moz-transform: skew(-60deg) rotate(-75deg) scale(1);
+  -ms-transform: skew(-60deg) rotate(-75deg) scale(1);
+  transform: skew(-60deg) rotate(-75deg) scale(1);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  pointer-events: auto;
+}
+
+.cn-wrapper li a span {
+  position: relative;
+  top: 1.8em;
+  display: block;
+  font-size: .5em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.cn-wrapper li div:hover,
+.cn-wrapper li div:active,
+.cn-wrapper li div:focus {
+  background: -webkit-radial-gradient(transparent 35%, #36AFD8 35%);
+  background: -moz-radial-gradient(transparent 35%, #36AFD8 35%);
+  background: radial-gradient(transparent 35%, #36AFD8 35%);
+}
+
+.opened-nav li {
+  -webkit-transition: all .3s ease .3s;
+  -moz-transition: all .3s ease .3s;
+  transition: all .3s ease .3s;
+}
+
+.opened-nav li:nth-child(7) {
+  -webkit-transform: rotate(-110deg) skew(60deg);
+  -moz-transform: rotate(-110deg) skew(60deg);
+  -ms-transform: rotate(-110deg) skew(60deg);
+  transform: rotate(-110deg) skew(60deg);
+}
+
+.opened-nav li:nth-child(6) {
+  -webkit-transform: rotate(12deg) skew(60deg);
+  -moz-transform: rotate(12deg) skew(60deg);
+  -ms-transform: rotate(12deg) skew(60deg);
+  transform: rotate(-78deg) skew(60deg);
+}
+
+.opened-nav li:nth-child(5) {
+  -webkit-transform: rotate(-46deg) skew(60deg);
+  -moz-transform: rotate(-46deg) skew(60deg);
+  -ms-transform: rotate(-46deg) skew(60deg);
+  transform: rotate(-46deg) skew(60deg);
+}
+
+.opened-nav li:nth-child(4) {
+  -webkit-transform: rotate(-14deg) skew(60deg);
+  -moz-transform: rotate(-14deg) skew(60deg);
+  -ms-transform: rotate(-14deg) skew(60deg);
+  transform: rotate(-14deg) skew(60deg);
+}
+
+.opened-nav li:nth-child(3) {
+  -webkit-transform: rotate(18deg) skew(60deg);
+  -moz-transform: rotate(18deg) skew(60deg);
+  -ms-transform: rotate(18deg) skew(60deg);
+  transform: rotate(18deg) skew(60deg);
+}
+
+.opened-nav li:nth-child(2) {
+  -webkit-transform: rotate(50deg) skew(60deg);
+  -moz-transform: rotate(50deg) skew(60deg);
+  -ms-transform: rotate(50deg) skew(60deg);
+  transform: rotate(50deg) skew(60deg);
+}
+
+.opened-nav li:first-child {
+  -webkit-transform: rotate(82deg) skew(60deg);
+  -moz-transform: rotate(82deg) skew(60deg);
+  -ms-transform: rotate(82deg) skew(60deg);
+  transform: rotate(82deg) skew(60deg);
+}
+
+/*road*/
+.roadcontent {
+  position: relative;
+}
+
+.roadcontent i {
+  font-size: 16px;
+  color: red;
+}
+
+.roadcontent_icon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+}
+
+.roadcontent .showRoad {
+  opacity: 0;
+}
+
+.road_test {
+  width: 150px;
+  height: 10px;
+  top: 375px;
+  left: 900px;
+  background-color: lightseagreen;
+  position: absolute;
+}
+
+.road_draw {
+  width: 1000px;
+}
+
+.path {
+  /*fill:none;*/
+  /*stroke:red;*/
+  /*stroke-width:6;*/
+  /*stroke-dasharray: 1000;*/
+  /*stroke-dashoffset: 0;*/
+  /*-webkit-animation: dash 5s linear normal;*/
+}
+
+@-webkit-keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes jump {
+  from {
+    -webkit-transform: scale(0.2);
+  }
+  to {
+    -webkit-transform: scale(0.3);
+  }
+}
+
+@-webkit-keyframes jump2 {
+  from {
+    -webkit-transform: scale(0.8);
+  }
+  to {
+    -webkit-transform: scale(0.5);
+  }
+}
+
+.dragline {
+  width: 100%;
+  margin: 0;
+  height: 10px;
+  text-align: center;
+  position: absolute;
+  bottom: 1px;
+  font-size: 24px;
+}

@@ -1,0 +1,50 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-calm">
+    <button class="button button-clear" ng-click="hidePeopleModal();">Close</button>
+    <h1 class="title">Attendee</h1>
+    <!--<button class="button button-clear">Save</button>-->
+  </ion-header-bar>
+  <ion-content>
+    <div class="item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input id="search" type="search" placeholder="Email or Name" ng-model="contact.Email" ng-change="filterContact()" style="width: 100%;" ng-focus="isShowCard = true;" ng-blur="isShowCard=false;">
+        <!--<i class="ion-close-circled" style="float: right;color: gainsboro"></i>-->
+      </label>
+      <button class="button button-clear" on-tap="addContact()">
+        Add
+      </button>
+    </div>
+
+    <div ng-if="isShowCard" class="card autocomplete_card" style="position: absolute;z-index: 200;width: 94%;top: 50px;max-height: 320px;">
+      <ion-list>
+        <ion-item
+          ng-repeat="people in showInviteeList" ng-click="addPeopleToList(people)">
+          {{people.givenName }}
+          <span style="float: right;color: gainsboro">
+            {{people.emailAddress}}
+          </span>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div class="list">
+      <ion-list>
+        <ion-item
+          ng-repeat="invitee in inviteeList"
+          class="item-remove-animate">
+          <i class="ion-checkmark-round"></i>
+          <strong>{{invitee.givenName}}</strong>
+          <span style="float: right;color: gainsboro">
+            {{invitee.emailAddress}}
+          </span>
+          <ion-option-button
+            class="button-assertive"
+            ng-click="inviteeList.splice($index,1)">
+            Delete
+          </ion-option-button>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-modal-view>

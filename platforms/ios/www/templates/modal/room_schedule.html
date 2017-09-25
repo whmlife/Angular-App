@@ -1,0 +1,26 @@
+<ion-view style="transform: scale(0.8);max-height: 500px;">
+  <ion-header-bar class="bar-calm">
+    <button class="button button-clear" ng-click="hideTimeModal();">Close</button>
+    <h1 class="title">RoomSchedule</h1>
+  </ion-header-bar>
+  <ion-content overflow-scroll="true" class = 'schedulescroll' style="bottom: 10px">
+    <div class="schedulecontent row">
+      <div class="col-10"></div>
+      <div class="col-90" style="position: relative;">
+        <current-line ></current-line>
+
+        <div event-block ng-repeat="ev in evs"
+             class="eventblock"
+             ng-class="{'blue':(ev.$create && !ev.$isEdit),'green':(ev.$create && ev.$isEdit && ev.$isAvailable),'red':(ev.$create && ev.$isEdit && !ev.$isAvailable)}"
+             style="left: {{ev.left}};top:{{ev.top}};width:{{ev.width}};height: {{ev.height}};display: {{ev.display}}"
+        >
+          <div>{{ev.title}} &nbsp;&nbsp;{{ev.starts |date:'HH:mm'}} to {{ev.ends|date:'HH:mm'}}</div>
+        </div>
+
+        <div ng-class="{'border1':($index%2)==0,'border2':($index%2)!=0}" ng-click="createNewEventBlock(event);" class="timeblock" ng-repeat="time in timeData" style="position: relative;">
+          <span class="timelabel" style="position: absolute">{{time.timeLabel}}</span>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

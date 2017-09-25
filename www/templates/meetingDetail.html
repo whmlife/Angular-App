@@ -1,0 +1,78 @@
+<ion-view title="Meeting Detail">
+  <ion-nav-buttons side="right">
+    <button class="button button-clear" ng-click="toSave();">
+      Save
+    </button>
+  </ion-nav-buttons>
+    <ion-content style="background-color: #e5e5e5;" class="reservation">
+      <div class="bookingcard">
+        <div class="list">
+          <div class="item meetingtitle row">
+            <div class="col-10" style="padding-left: 5px;height: 34px;line-height: 34px;color: #0a9dc7">
+              <i class="ion-ios-circle-filled"></i>
+            </div>
+            <div class="col-80">
+              <input type="text" placeholder="Subject" ng-model="meetingInfo.title" style="width: 100%;">
+            </div>
+          </div>
+
+          <div></div>
+
+          <div class="row item bookingtime">
+            <div class="col-40" style="border-right: 1px solid gainsboro" ng-click="showDatePicker()">
+              <div style="margin: 10px">
+                <p>Date</p>
+                <p style="color: #000;font-weight: 500">{{meetingInfo.starts |date:'yyyy MMMdd'}}</p>
+                <p>{{meetingInfo.starts |date:'EEEE'}}</p>
+              </div>
+            </div>
+            <div class="col-60" style="margin-left:10px; " ng-click="openTimeModal()">
+              <div style="margin: 10px">
+                <p>Time</p>
+                <p style="color: #000;font-weight: 500">
+                  {{meetingInfo.starts | date: 'HH:mm'}}
+                  <!--{{meetingInfo.startTimes}}-->
+                  <i class="ion-ios-arrow-thin-right"></i>
+                  {{meetingInfo.ends | date: 'HH:mm'}}
+                  <!--{{meetingInfo.overTimes}}-->
+                </p>
+                <p>Duration: {{meetingInfo.duration}} hours</p>
+              </div>
+            </div>
+          </div>
+
+          <div></div>
+          <div class="row item bookingroom">
+            <div class="col" style="font-size: 1.2em;color: #AAAAAA;">
+              <i class="ion-ios-location"></i>&nbsp;&nbsp;&nbsp;Room&nbsp;&nbsp;{{meetingInfo.roomName}}
+            </div>
+            <!--<div class="col-80" style="text-align: right">Room1(3F,8person)</div>-->
+          </div>
+
+          <div></div>
+          <div class="row item bookingperson" ng-click="openPeopleModal();">
+            <div class="col" style="font-size: 1.2em;color: #AAAAAA;">
+              <i class="ion-person-add"></i>&nbsp;&nbsp;Attendee
+              <div style="float: right;">
+                <span>{{inviteeList.length}}</span>
+                <i class="ion-ios-arrow-right"></i>
+              </div>
+            </div>
+            <!--<div class="col-80" style="text-align: right">click to choose</div>-->
+          </div>
+
+          <div></div>
+          <div class="row item bookingnote">
+            <div class="col">
+              <textarea placeholder="Note" ng-model="meetingInfo.content"></textarea>
+            </div>
+          </div>
+
+          <div></div>
+          <div class="bookingbtn">
+            <button class="button button-assertive" style="width: 100%;margin: 0 auto;" ng-click="toDelete();">Delete</button>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+</ion-view>

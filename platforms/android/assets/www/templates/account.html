@@ -1,0 +1,20 @@
+<ion-view title="Account">
+    <ion-content>
+        <div class="card">
+            <div class="list accountinfo" >
+              <label class="item item-input">
+                User Name: {{userInfo.userName}}
+              </label>
+              <label class="item item-input">
+                Name: {{userInfo.name}} &nbsp; {{ userInfo.surname}}
+              </label>
+              <label class="item item-input">
+                Email: {{userInfo.email}}
+              </label>
+            </div>
+        </div>
+      <div class="logoutbtn">
+          <button class="button button-assertive" ng-click="logout();">Logout</button>
+        </div>
+    </ion-content>
+</ion-view>

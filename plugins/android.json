@@ -1,0 +1,22 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-datepicker": {
+            "PACKAGE_NAME": "com.dfocus.dev.justmeeting"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "PACKAGE_NAME": "com.dfocus.dev.justmeeting"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.dfocus.dev.justmeeting"
+        }
+    }
+}

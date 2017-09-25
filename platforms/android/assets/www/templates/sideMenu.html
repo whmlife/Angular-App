@@ -1,0 +1,125 @@
+<ion-view >
+  <ion-side-menus>
+        <!-- 中间内容 -->
+        <ion-side-menu-content drag-content="false">
+
+            <ion-nav-bar class="bar-calm">
+                <ion-nav-back-button>
+                    Back
+                </ion-nav-back-button>
+            </ion-nav-bar>
+
+            <ion-tabs class="tabs-icon-only tabs-calm">
+                <!-- Room Tab -->
+                <ion-tab title="Room" icon-off="ion-ios-people-outline" icon-on="ion-ios-people" href="#/app/index">
+                    <ion-nav-view name="tab-Room"></ion-nav-view>
+                </ion-tab>
+
+                <!--&lt;!&ndash; calendar Tab &ndash;&gt;-->
+                <!--<ion-tab title="Calendar" icon-off="ion-ios-list-outline" icon-on="ion-ios-list" href="#/app/schedule">-->
+                    <!--<ion-nav-view name="tab-Calendar"></ion-nav-view>-->
+                <!--</ion-tab>-->
+
+                <!-- Map Tab -->
+                <!--<ion-tab title="Location" icon-off="ion-ios-navigate-outline" icon-on="ion-ios-navigate" href="#/app/map" ng-show="userInfo.tenantName=='Nuskin'" >-->
+                  <!--<ion-nav-view name="tab-Location"></ion-nav-view>-->
+                <!--</ion-tab>-->
+
+                <!-- Account Tab -->
+                <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/app/account">
+                    <ion-nav-view name="tab-Account"></ion-nav-view>
+                </ion-tab>
+            </ion-tabs>
+        </ion-side-menu-content>
+
+        <!-- 右侧菜单 -->
+        <ion-side-menu side="right" ng-controller="mainMenuCtrl">
+            <ion-header-bar class="bar-calm">
+                <button class="button button-clear" menu-close>Cancel</button>
+                <h1 class="title">Filter</h1>
+                <button class="button button-clear" ng-click="saveFilterInfo();">Save</button>
+            </ion-header-bar>
+            <ion-content style="background:#f8f8f8; ">
+                <button class="button button-full button-light" style="margin-top: 0; text-align: center" ng-click="toShowLocation();">
+                    Location
+                </button>
+                <button class="button button-full button-light" style="margin-bottom: 1px;" ng-click="toShowCapacity();">
+                    Capacity
+                </button>
+                <button class="button button-full button-light" style="margin-top: 1px;" ng-click="toShowEquipment();">
+                    Equipment
+                </button>
+
+                <div class="list filtertime" style="margin-bottom:0px;">
+                  <label class="item item-input" ng-click="openDatepicker(1)">Start Time:
+                    {{startTime | date: 'MMMd EEE hh:mm a'}}
+                  </label>
+                  <label class="item item-input" ng-click="openDatepicker(2)"> &nbsp;End Time:
+                    {{endTime | date: 'MMMd EEE hh:mm a'}}
+                  </label>
+
+                </div>
+
+                <!--<div class="list" style="text-align: center;">-->
+                  <!--<div class="row" style="margin: 0 auto;">-->
+                    <!--<div class="col-30" style="padding:5px 15px;margin:5px;border: 1px solid #000000;border-radius: 4px;"><span>30 min</span></div>-->
+                    <!--<div class="col-30" style="padding:5px 15px;margin:5px;border: 1px solid #000000;border-radius: 4px;"><span>60 min</span></div>-->
+                    <!--<div class="col-30" style="padding:5px 15px;margin:5px;border: 1px solid #000000;border-radius: 4px;"><span>90 min</span></div>-->
+                  <!--</div>-->
+                <!--</div>-->
+            </ion-content>
+
+          <!-- 以下是侧边滑出子菜单 -->
+            <!-- Location Menu -->
+            <div class="pane" ng-class="{'menushow':!hideLocation,'menuhide':hideLocation}" style="z-index: 11;">
+                <ion-header-bar class="bar-calm">
+                    <button class="button button-clear" ng-click="toHideLocation();">Cancel</button>
+                    <h1 class="title">Location</h1>
+                    <button class="button button-clear" ng-click="toHideLocation();">Save</button>
+                </ion-header-bar>
+
+                <ion-content>
+                    <ion-list ng-repeat="location in locationlist">
+                        <ion-radio ng-model="filter.location" ng-value="location">{{location.building}}</ion-radio>
+                    </ion-list>
+                </ion-content>
+            </div>
+
+            <!-- capacity Menu -->
+            <div class="pane" ng-class="{'menushow':!hideCapacity,'menuhide':hideCapacity}" style="z-index: 11;">
+                <ion-header-bar class="bar-calm">
+                    <button class="button button-clear" ng-click="toHideCapacity();">Cancel</button>
+                    <h1 class="title">Capacity</h1>
+                    <button class="button button-clear" ng-click="toHideCapacity();">Save</button>
+                </ion-header-bar>
+
+                <ion-content>
+                  <ion-checkbox
+                    ng-repeat="capacity in capacityList"
+                    ng-model="capacity.checked"
+                    ng-checked="capacity.checked">
+                    {{capacity.text}}&nbsp;person
+                  </ion-checkbox>
+                </ion-content>
+            </div>
+
+            <!-- Equipment Menu -->
+            <div class="pane" ng-class="{'menushow':!hideEquipment,'menuhide':hideEquipment}" style="z-index: 11;">
+                <ion-header-bar class="bar-calm">
+                    <button class="button button-clear" ng-click="toHideEquipment();">Cancel</button>
+                    <h1 class="title">Equipment</h1>
+                    <button class="button button-clear" ng-click="toHideEquipment();">Save</button>
+                </ion-header-bar>
+
+                <ion-content>
+                    <ion-checkbox
+                      ng-repeat="equipment in equipmentInfo"
+                      ng-model="equipment.checked"
+                      ng-checked="equipment.checked">
+                      {{equipment.name}}
+                    </ion-checkbox>
+                </ion-content>
+            </div>
+        </ion-side-menu>
+    </ion-side-menus>
+</ion-view>

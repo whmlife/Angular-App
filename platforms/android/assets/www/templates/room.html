@@ -1,0 +1,52 @@
+<ion-view title={{building}}>
+  <!--二维码扫描按钮-->
+  <ion-nav-buttons side="left">
+    <button class="button button-clear" ng-click="scanCode()">
+      <i class="ion-qr-scanner"></i>
+    </button>
+  </ion-nav-buttons>
+  <!--搜索按钮-->
+  <ion-nav-buttons side="right">
+    <button class="button button-clear" menu-toggle="right">
+      <i class="ion-ios-search"></i>
+    </button>
+  </ion-nav-buttons>
+  <!-- 右侧快速导航 -->
+  <div class="rightbar" style="z-index: 10; color: #257b86;">
+    <div style="margin-bottom: 10px;" on-touch="findFloor(floorIndex.floorID)"  ng-repeat="floorIndex in floorList">{{floorIndex.floorID.substring(floorIndex.floorID.length-4).toUpperCase();}}</div>
+  </div>
+  <!--<div class="row has-header" style="padding: 0;position: fixed;background-color: white;z-index: 99;">
+    <div class="col col-50 view-tabs" ng-class="{'active':(listView === 1)}" on-tap="changeListview(1)">List1</div>
+    <div class="col col-50 view-tabs" ng-class="{'active':(listView === 2)}" on-tap="changeListview(-1)">List2</div>
+  </div>-->
+
+  <ion-content overflow-scroll="true">
+    <!--向下滑刷新-->
+    <ion-refresher
+      on-refresh="getAllRoomList();">
+    </ion-refresher>
+    <div class="row has-header" style="height: 20px;">
+    </div>
+    <div class="floorlist" >
+      <div class="floordetail" ng-repeat="floor in floorList" id="{{floor.floorID}}">
+        <div class="floorheader">
+          <p style="">{{floor.floorID}}</p>
+        </div>
+        <div class="roomlist" ng-show="listView===1">
+          <div class="room" mytool-tips style="text-align: center;position: relative;" ng-repeat="room in floor.roomList">
+            <div class="roomicon"
+                 ng-class="{'roomavailable':(room.state == 'Available'),'roomoccupied':(room.state == 'Occupied'),'roomreleased':(room.state == 'Waiting')}"
+                 on-tap="goRoomDetail(room.id,room.name)" >
+              <img ng-if="room.capacity <= 4" src='img/4.png'>
+              <img ng-if="room.capacity> 4 && room.capacity <= 12" src='img/6.png'>
+              <img ng-if="room.capacity> 12 && room.capacity <= 18" src='img/10.png'>
+              <img ng-if="room.capacity> 18 && room.capacity <= 100" src='img/12.png'>
+              <img ng-if="room.capacity> 100" src='img/252.png'>
+            </div>
+            <div class="roomname"><p style="font-size: 0.8em;">{{room.name}} ({{ room.capacity }})</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

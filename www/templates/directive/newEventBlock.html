@@ -1,0 +1,7 @@
+<div class="neweventblock" ng-class="{'neweventblock1':(newEvent.avaiable==true),'neweventblock2':(newEvent.avaiable==false)}"
+     id="neweventblock" style="left: {{newEvent.left}};top:{{newEvent.top}};width:{{newEvent.width}};height: {{newEvent.height}}">
+  <div style="color:#fff;">{{newEvent.start_time | date:'hh:mm a'}}&nbsp; to &nbsp;{{newEvent.end_time |date:'hh:mm a'}} &nbsp;&nbsp;&nbsp; Duration:{{newEvent.duration}} h</div>
+  <div class="dragicon" id="dragIcon" style="width: 100%;">
+    <i class="ion-ios-drag"></i>
+  </div>
+</div>

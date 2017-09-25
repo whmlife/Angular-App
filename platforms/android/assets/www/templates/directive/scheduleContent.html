@@ -1,0 +1,16 @@
+<div class="col-90" style="position: relative;" schedule-content>
+  <current-line ng-show="showLine"></current-line>
+  <div event-block></div>
+  <div event-block ng-repeat="ev in evs"
+       class="eventblock"
+       ng-class="{'blue':(!ev.$isPassed && ev.$create)}"
+       style="left: {{ev.left}};top:{{ev.top}};width:{{ev.width}};height: {{ev.height}}"
+       ng-click="meetingDetail(ev.id,e);">
+    <div>{{ev.title}} &nbsp;&nbsp;{{ev.starts |date:'HH:mm'}} to {{ev.ends|date:'HH:mm'}}</div>
+  </div>
+  <!--<new-event></new-event>-->
+
+  <div ng-class="{'border1':($index%2)==0,'border2':($index%2)!=0}"  class="timeblock" ng-repeat="time in timeData">
+    <span class="timelabel">{{time.timeLabel}}</span>
+  </div>
+</div>
